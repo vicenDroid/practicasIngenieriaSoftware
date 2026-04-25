@@ -1,0 +1,2 @@
+Titulo: Ventas Abril
+Contenido: Se han vendido 500 unidades.
