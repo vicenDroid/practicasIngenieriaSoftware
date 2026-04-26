@@ -1,24 +1,28 @@
 
 print("--- EL ARCHIVO SE ESTÁ EJECUTANDO ---")
 
+class Validator:
+    def es_valido(self, dato):
+        raise NotImplementedError("Este método debe ser implementado por las subclases.")
+    
 # ENTIDAD: Solo guarda información del libro
 class Libro:
     def __init__(self, titulo, autor):
         self.titulo = titulo
         self.autor = autor
+    
+class ValidadorPorDNI(Validator):
+    def es_valido(self, dni):
+        # Regla: Debe tener exactamente 9 caracteres (ejemplo simple)
+        return len(dni.strip()) == 9
 
 # SERVICIO: Solo se encarga de validar si un usuario es apto
-class ValidadorUsuario:
+class ValidadorUsuario(Validator):
     def es_valido(self, nombre):
         # Un nombre es válido si no está vacío y tiene más de 3 caracteres
         if len(nombre.strip()) > 5:
             return True
         return False
-    
-class ValidadorPorDNI:
-    def es_valido(self, dni):
-        # Regla: Debe tener exactamente 9 caracteres (ejemplo simple)
-        return len(dni.strip()) == 9
     
 # Creamos la clase SisGestBi para gestionar 
 class SisGestBi:
