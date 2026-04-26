@@ -59,8 +59,7 @@ system = SisGestBi(Validator)
 # 2. We create the data. The favorite_book object is created with the data from "Clean Code".
 favourite_book = Book("El Código Limpio", "Robert C. Martin")
 
-# 3. We tested a case that SHOULD WORK
-print("Probando con nombre válido:")
+# 3. We tested a case that SHOULD WORKprint("Probando con nombre válido:")
 system.perform_loan("Vicente", favourite_book)
 
 # 4. We tested a case that SHOULD FAIL (Short name)
